@@ -1,7 +1,5 @@
 using Laboratorio4.Services.Clienti;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using System.ComponentModel;
 
 namespace Laboratorio4.Tests
 {
