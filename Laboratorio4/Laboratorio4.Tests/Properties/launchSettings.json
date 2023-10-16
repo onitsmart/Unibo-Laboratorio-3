@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Laboratorio4.Tests": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
