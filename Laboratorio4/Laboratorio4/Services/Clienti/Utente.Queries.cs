@@ -44,5 +44,10 @@ namespace Laboratorio4.Services.Clienti
         {
             throw new NotImplementedException();
         }
+
+        public async Task<int> ContaUtentiPerIdClientePassatoInInput(Guid idCliente)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

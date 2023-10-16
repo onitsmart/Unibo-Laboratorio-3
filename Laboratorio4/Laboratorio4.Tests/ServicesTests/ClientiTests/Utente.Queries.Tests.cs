@@ -146,5 +146,33 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
 
             Assert.Null(utenteNullo);
         }
+
+        public static IEnumerable<object[]> TestData_ContaUtentiPerIdClientePassatoInInput = new List<object[]>
+        {
+            new object[] {
+                Guid.Parse("e9d337f5-2ce7-4506-8fed-fdf03f301693"),
+                4
+            },
+            new object[] {
+                Guid.Parse("90a40f7f-b750-4c09-9aca-837440d78d47"),
+                2
+            },
+            new object[] {
+                Guid.Parse("8428529f-9fd1-4bff-b4b5-dfda6b842d56"),
+                1
+            },
+            new object[] {
+                Guid.Parse("5d106b64-e592-498e-9421-62c96f85a984"),
+                0
+            }
+        };
+        [Theory]
+        [MemberData(nameof(TestData_ContaUtentiPerIdClientePassatoInInput))]
+        public async void ContaUtenti_PerIdClientePassatoInInput(Guid input, int valoreAtteso)
+        {
+            var conteggio = await _clientiService.ContaUtentiPerIdClientePassatoInInput(input);
+
+            Assert.Equal(valoreAtteso, conteggio);
+        }
     }
 }
