@@ -19,6 +19,5 @@ namespace Laboratorio4.Services.Clienti
         public string Citta { get; set; }
 
         public IEnumerable<Utente> Utenti { get; set; }
-        public IEnumerable<Ordine> Ordini { get; set; }
     }
 }

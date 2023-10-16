@@ -21,7 +21,7 @@ namespace Laboratorio4.Infrastructure
                 {
                     Id = Guid.Parse("e9d337f5-2ce7-4506-8fed-fdf03f301693"),
                     RagioneSociale = "Pippo spa",
-                    Nome = "Pippo",
+                    Nome = "Pippo & paperino",
                     Citta = "Cesena",
                     CodiceRicerca = "C00154",
                     Attivo = true
@@ -154,7 +154,7 @@ namespace Laboratorio4.Infrastructure
                     Id = Guid.Parse("37681b04-8edf-4fd4-9d52-b8b01c8afe40"),
                     Codice = "ELI001",
                     Nome = "Elicottero",
-                    Importo = 500.000M,
+                    Importo = 500000M,
                     QuantitaDisponibile = 2,
                     UltimaModifica = DateTime.Now.AddDays(-15),
                     PesoKg = 5000
@@ -199,7 +199,6 @@ namespace Laboratorio4.Infrastructure
                     Stato = StatoOrdine.InTransito,
                     DataConsegna = DateTime.Now.AddDays(10),
                     Note = "Consegnate alle svelta",
-                    IdCliente = Guid.Parse("e9d337f5-2ce7-4506-8fed-fdf03f301693"),
                     IdUtente = Guid.Parse("5d106b64-e592-498e-9421-62c96f85a984")
                 },
                 new Ordine
@@ -209,7 +208,6 @@ namespace Laboratorio4.Infrastructure
                     DataCreazione = DateTime.Now.AddMonths(-2),
                     Stato = StatoOrdine.Reso,
                     DataConsegna = DateTime.Now.AddMonths(-1),
-                    IdCliente = Guid.Parse("90a40f7f-b750-4c09-9aca-837440d78d47"),
                     IdUtente = Guid.Parse("2178e530-6db6-444d-b2fe-b49a06f06a1f")
                 },
                 new Ordine
@@ -219,7 +217,6 @@ namespace Laboratorio4.Infrastructure
                     DataCreazione = DateTime.Now,
                     Stato = StatoOrdine.Ricevuto,
                     Note = "Lasciare in giardino",
-                    IdCliente = Guid.Parse("376299b5-2428-49f2-8374-1d6e9a80467c"),
                     IdUtente = Guid.Parse("95348363-ea0e-43d8-9b6b-c37bb81edaf0")
                 });
 
@@ -255,7 +252,7 @@ namespace Laboratorio4.Infrastructure
                 new ProdottoOrdine
                 {
                     Id = 5,
-                    Quantita = 32,
+                    Quantita = 46,
                     IdProdotto = Guid.Parse("100276f3-2247-4852-9a6e-7c50ce878245"),
                     IdOrdine = 2,
                 });

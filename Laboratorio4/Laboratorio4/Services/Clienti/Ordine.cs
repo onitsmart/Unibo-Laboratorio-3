@@ -19,11 +19,6 @@ namespace Laboratorio4.Services.Clienti
 
         public string Note { get; set; }
 
-        public Guid IdCliente { get; set; }
-        [ForeignKey(nameof(IdCliente))]
-        [InverseProperty("Ordini")]
-        public Cliente Cliente { get; set; }
-
         public Guid IdUtente { get; set; }
         [ForeignKey(nameof(IdUtente))]
         [InverseProperty("Ordini")]
