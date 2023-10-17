@@ -40,7 +40,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         }
 
         [Fact]
-        public async void CaricaUtenti_AttiviDaAlmeno2MesiOrdinatiPerNome()
+        public async void CaricaUtenti_AttiviRegistratiDaAlmeno1MeseOrdinatiPerCognome()
         {
             var idsUtentiAttiviAttesi = new Guid[] {
                 Guid.Parse("a6cd7ed2-8329-4bf1-b658-d8b815e71272"),
