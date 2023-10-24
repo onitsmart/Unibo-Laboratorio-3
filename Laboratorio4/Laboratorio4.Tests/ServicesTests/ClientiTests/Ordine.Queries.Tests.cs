@@ -95,7 +95,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
                 Guid.Parse("37681b04-8edf-4fd4-9d52-b8b01c8afe40"),
                 new int[]
                 {
-                    1
+                    3
                 }
             },
             new object[] {
