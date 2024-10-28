@@ -1,4 +1,4 @@
-﻿using Laboratorio4.Services.Clienti;
+﻿using Laboratorio3.Services.Clienti;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Laboratorio4.Tests.ServicesTests.ClientiTests
+namespace Laboratorio3.Tests.ServicesTests.ClientiTests
 {
     // MEDIUM-HARD
     public class OrdineQueriesTests
@@ -42,7 +42,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         };
         [Theory]
         [MemberData(nameof(TestData_CaricaOrdiniConStatoPassatoInInput))]
-        public async void CaricaOrdini_ConStatoPassatoInInput(StatoOrdine input, IEnumerable<int> valoriAttesi)
+        public async Task CaricaOrdini_ConStatoPassatoInInput(StatoOrdine input, IEnumerable<int> valoriAttesi)
         {
             var idsOrdini = await _clientiService.CaricaIdOrdiniConStatoPassatoInInput(input);
             var idsOrdiniOrdinati = idsOrdini.OrderBy(x => x);
@@ -50,6 +50,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
             Assert.Equal(valoriAttesi, idsOrdiniOrdinati);
         }
 
+        // Migliora ciò che hai scritto nel test precedente per far passare anche questo test
         [Fact]
         public async void CaricaOrdini_ConStatoPassatoInInput_CasoNullo()
         {
@@ -62,7 +63,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         }
 
         [Fact]
-        public async void CaricaOrdine_PiuCostoso()
+        public async Task CaricaOrdine_PiuCostoso()
         {
             var valoreAtteso = 3;
 
@@ -72,7 +73,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         }
 
         [Fact]
-        public async void CaricaOrdine_ConPiuProdotti()
+        public async Task CaricaOrdine_ConPiuProdotti()
         {
             var valoreAtteso = 1;
 
@@ -105,7 +106,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         };
         [Theory]
         [MemberData(nameof(TestData_CaricaOrdiniConIdProdottoPassatoInInput))]
-        public async void CaricaOrdini_ConIdProdottoPassatoInInput(Guid input, IEnumerable<int> valoriAttesi)
+        public async Task CaricaOrdini_ConIdProdottoPassatoInInput(Guid input, IEnumerable<int> valoriAttesi)
         {
             var idsOrdini = await _clientiService.CaricaIdOrdiniConIdProdottoPassatoInInput(input);
             var idsOrdiniOrdinati = idsOrdini.OrderBy(x => x);
@@ -130,7 +131,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         };
         [Theory]
         [MemberData(nameof(TestData_CaricaOrdiniPerIdClientePassatoInInput))]
-        public async void CaricaOrdini_PerIdClientePassatoInInput(Guid input, IEnumerable<int> valoriAttesi)
+        public async Task CaricaOrdini_PerIdClientePassatoInInput(Guid input, IEnumerable<int> valoriAttesi)
         {
             var idOrdini = await _clientiService.CaricaIdOrdiniPerIdClientePassatoInInput(input);
 

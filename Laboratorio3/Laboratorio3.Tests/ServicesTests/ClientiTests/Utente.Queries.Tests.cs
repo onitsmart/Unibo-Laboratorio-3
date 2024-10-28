@@ -1,9 +1,9 @@
-using Laboratorio4.Services.Clienti;
+using Laboratorio3.Services.Clienti;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
-using static Laboratorio4.Services.Clienti.ClientiService;
+using static Laboratorio3.Services.Clienti.ClientiService;
 
-namespace Laboratorio4.Tests.ServicesTests.ClientiTests
+namespace Laboratorio3.Tests.ServicesTests.ClientiTests
 {
     // EASY
     public class UtenteQueriesTests
@@ -20,7 +20,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         }
 
         [Fact]
-        public async void CaricaUtenti_Attivi()
+        public async Task CaricaUtenti_Attivi()
         {
             // Arrange
             var idsUtentiAttiviAttesi = new Guid[] {
@@ -39,8 +39,9 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
             Assert.Equal(idsUtentiAttiviAttesi, idsUtentiAttiviOrdinati);
         }
 
+        // Includi gli utenti registrati esattamente un mese fa
         [Fact]
-        public async void CaricaUtenti_AttiviRegistratiDaAlmeno1MeseOrdinatiPerCognome()
+        public async Task CaricaUtenti_AttiviRegistratiDaAlmeno1MeseOrdinatiPerCognome()
         {
             var idsUtentiAttiviAttesi = new Guid[] {
                 Guid.Parse("a6cd7ed2-8329-4bf1-b658-d8b815e71272"),
@@ -73,9 +74,10 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
                 Array.Empty<Guid>()
             }
         };
+        // Case sensitivity non è rilevante
         [Theory]
         [MemberData(nameof(TestData_CaricaUtentiConEmailCheFinisceConStringaPassataInInput))]
-        public async void CaricaUtenti_ConEmailCheFinisceConStringaPassataInInput(string input, IEnumerable<Guid> valoriAttesi)
+        public async Task CaricaUtenti_ConEmailCheFinisceConStringaPassataInInput(string input, IEnumerable<Guid> valoriAttesi)
         {
             var idsUtenti = await _clientiService.CaricaIdUtentiConEmailCheFinisceConStringaPassataInInput(input);
             var idsUtentiOrdinati = idsUtenti.OrderBy(x => x);
@@ -83,8 +85,9 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
             Assert.Equal(valoriAttesi, idsUtentiOrdinati);
         }
 
+        // Migliora ciò che hai scritto nel test precedente per far passare anche questo test
         [Fact]
-        public async void CaricaUtenti_ConEmailCheFinisceConStringaPassataInInput_CasoNullo()
+        public async Task CaricaUtenti_ConEmailCheFinisceConStringaPassataInInput_CasoNullo()
         {
             var idsUtentiAttesi = Array.Empty<Guid>();
 
@@ -95,7 +98,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         }
 
         [Fact]
-        public async void CaricaUtenti_SenzaOrdini()
+        public async Task CaricaUtenti_SenzaOrdini()
         {
             var idsUtentiAttiviAttesi = new Guid[] {
                 Guid.Parse("376299b5-2428-49f2-8374-1d6e9a80467c"),
@@ -110,7 +113,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         }
 
         [Fact]
-        public async void CaricaUtenti_PerClientePassatoInInput()
+        public async Task CaricaUtenti_PerClientePassatoInInput()
         {
             var idsUtentiAttiviAttesi = new Guid[] {
                 Guid.Parse("376299b5-2428-49f2-8374-1d6e9a80467c"),
@@ -125,7 +128,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         }
 
         [Fact]
-        public async void CaricaUtente_CheHaFattoOrdinePassatoInInput()
+        public async Task CaricaUtente_CheHaFattoOrdinePassatoInInput()
         {
             var utente = await _clientiService.CaricaUtenteCheHaFattoOrdinePassatoInInput(1);
 
@@ -139,8 +142,9 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
                 utente);
         }
 
+        // Migliora ciò che hai scritto nel test precedente per far passare anche questo test
         [Fact]
-        public async void CaricaUtente_CheHaFattoOrdinePassatoInInput_OrdineNullo()
+        public async Task CaricaUtente_CheHaFattoOrdinePassatoInInput_OrdineNullo()
         {
             var utenteNullo = await _clientiService.CaricaUtenteCheHaFattoOrdinePassatoInInput(5);
 
@@ -168,7 +172,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         };
         [Theory]
         [MemberData(nameof(TestData_ContaUtentiPerIdClientePassatoInInput))]
-        public async void ContaUtenti_PerIdClientePassatoInInput(Guid input, int valoreAtteso)
+        public async Task ContaUtenti_PerIdClientePassatoInInput(Guid input, int valoreAtteso)
         {
             var conteggio = await _clientiService.ContaUtentiPerIdClientePassatoInInput(input);
 

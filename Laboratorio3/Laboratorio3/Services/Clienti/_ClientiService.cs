@@ -1,4 +1,4 @@
-﻿namespace Laboratorio4.Services.Clienti
+﻿namespace Laboratorio3.Services.Clienti
 {
     public partial class ClientiService
     {

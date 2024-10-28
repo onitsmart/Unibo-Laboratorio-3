@@ -1,9 +1,9 @@
-﻿using Laboratorio4.Services.Clienti;
+﻿using Laboratorio3.Services.Clienti;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Laboratorio4.Infrastructure
+namespace Laboratorio3.Infrastructure
 {
     public class DataGenerator
     {

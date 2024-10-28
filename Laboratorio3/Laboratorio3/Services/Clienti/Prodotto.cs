@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Laboratorio4.Services.Clienti
+namespace Laboratorio3.Services.Clienti
 {
     public class Prodotto
     {

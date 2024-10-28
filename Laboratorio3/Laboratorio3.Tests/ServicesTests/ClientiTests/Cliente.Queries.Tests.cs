@@ -1,9 +1,9 @@
-using Laboratorio4.Services.Clienti;
+using Laboratorio3.Services.Clienti;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
-using static Laboratorio4.Services.Clienti.ClientiService;
+using static Laboratorio3.Services.Clienti.ClientiService;
 
-namespace Laboratorio4.Tests.ServicesTests.ClientiTests
+namespace Laboratorio3.Tests.ServicesTests.ClientiTests
 {
     // HARDER
     public class ClienteQueriesTests
@@ -108,7 +108,7 @@ namespace Laboratorio4.Tests.ServicesTests.ClientiTests
         };
         [Theory]
         [MemberData(nameof(TestData_CaricaClientiConFiltriPassatiInInput))]
-        public async void CaricaClienti_ConFiltriPassatiInInput(string filtroNomeCliente, string filtroNomeUtente, StatoOrdine? stato, DateTime? minimaDataCreazioneOrdine, IEnumerable<Guid> valoriAttesi)
+        public async Task CaricaClienti_ConFiltriPassatiInInput(string filtroNomeCliente, string filtroNomeUtente, StatoOrdine? stato, DateTime? minimaDataCreazioneOrdine, IEnumerable<Guid> valoriAttesi)
         {
             var idsClienti = await _clientiService.CercaIdClientiConFiltriPassatiInInput(filtroNomeCliente, filtroNomeUtente, stato, minimaDataCreazioneOrdine);
             var idsClientiOrdinati = idsClienti.OrderBy(x => x);

@@ -1,7 +1,7 @@
-﻿using Laboratorio4.Infrastructure;
+﻿using Laboratorio3.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
-namespace Laboratorio4.Services.Clienti
+namespace Laboratorio3.Services.Clienti
 {
     public class ClientiDbContext : DbContext
     {
