@@ -5,6 +5,25 @@ using static Laboratorio3.Services.Clienti.ClientiService;
 
 namespace Laboratorio3.Tests.ServicesTests.ClientiTests
 {
+    /*
+     * OPERAZIONI UTILI IN LINQ
+     * 
+     * .Where => Filtro
+     * .Take => Seleziona solo un numero limitato di elementi
+     * .Skip => Non seleziona i primi N elementi
+     * 
+     * .Select => Seleziono una parte dell'oggetto in input
+     * .SelectMany => Appiattisce. Da un array di array ad un semplice array
+     * .ToArray => Seleziona gli elementi risultanti dall'interrogazione e li inserisce in un array
+     * .ToList => Seleziona gli elementi risultanti dall'interrogazione e li inserisce in una lista
+     * .Count => Conta gi elementi risultanti
+     * .OrderBy => Ordinamento
+     * .GroupBy => Raggruppamento
+     * 
+     * https://learn.microsoft.com/it-it/dotnet/csharp/linq/standard-query-operators/
+     * 
+     */
+
     // EASY
     public class UtenteQueriesTests
     {
