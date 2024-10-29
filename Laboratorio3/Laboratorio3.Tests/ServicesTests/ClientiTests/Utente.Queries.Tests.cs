@@ -64,7 +64,8 @@ namespace Laboratorio3.Tests.ServicesTests.ClientiTests
             Assert.Equal(idsUtentiAttiviAttesi, idsUtentiAttiviOrdinati);
         }
 
-        // Includi gli utenti registrati esattamente un mese fa
+        // Includi gli utenti registrati esattamente un mese fa.
+        // Ci interessano anche le ore quindi non usare .Date sulle date.
         [Fact]
         public async Task CaricaUtenti_AttiviRegistratiDaAlmeno1MeseOrdinatiPerCognome()
         {
