@@ -16,9 +16,15 @@ namespace Laboratorio3.Tests.ServicesTests.ClientiTests
      * .SelectMany => Appiattisce. Da un array di array ad un semplice array
      * .ToArray => Seleziona gli elementi risultanti dall'interrogazione e li inserisce in un array
      * .ToList => Seleziona gli elementi risultanti dall'interrogazione e li inserisce in una lista
+     * .FirstOrDefault => Il primo elemento o il default per il tipo di elemento cercato
+     * .First => Come sopra ma va in eccezione se non c'è nulla
+     * .Single => 1 ed 1 solo elemento. Se ne trova 2 va in eccezione
+     * 
      * .Count => Conta gi elementi risultanti
      * .OrderBy => Ordinamento
      * .GroupBy => Raggruppamento
+     * .Any => true se un elemento rispetta la condizione
+     * .All => true se tutti gli elementi della lista rispettano la condizione
      * 
      * https://learn.microsoft.com/it-it/dotnet/csharp/linq/standard-query-operators/
      * 
