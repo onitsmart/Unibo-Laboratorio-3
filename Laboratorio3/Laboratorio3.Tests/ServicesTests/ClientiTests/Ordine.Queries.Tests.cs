@@ -73,6 +73,7 @@ namespace Laboratorio3.Tests.ServicesTests.ClientiTests
         }
 
         [Fact]
+        // Si parla di quantità, non mi interessano i prodotti univoci, mettete tutto insieme. 50 viti > 1 vite + 1 bullone
         public async Task CaricaOrdine_ConPiuProdotti()
         {
             var valoreAtteso = 1;
